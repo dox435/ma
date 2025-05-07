@@ -1,0 +1,17 @@
+{
+    "rewrites": [
+      {
+        "source": "/download",
+        "destination": "/download.html"
+      },
+      {
+        "source": "/hwidreset",
+        "destination": "/hwidreset.html"
+      },
+      {
+        "source": "/settings",
+        "destination": "/settings.html"
+      }
+    ]
+  }
+  
