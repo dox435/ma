@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Download - FiveM Spoofer</title>
+  <link rel="stylesheet" href="index.css"/> 
+  <link rel="stylesheet" href="download.css"/> 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar">
+    <div class="logo">FiveM Spoofer</div>
+    <ul class="nav-tabs" id="navTabs">
+      <li><a href="index.html" class="nav-tab">Home</a></li>
+      <li><a href="download.html" class="nav-tab">Download</a></li>
+      <li><a href="dashboard.html" class="nav-tab">Dashboard</a></li>
+      <li><a href="hwidreset.html" class="nav-tab">HWID Reset</a></li> 
+    </ul>
+  </nav>
+
+  <div class="download-container">
+    <div class="download-content">
+      <h1 class="glow-title">Download FiveM Spoofer</h1>
+      <p class="glow-subtext">
+        100% Undetected &bull; Totally Free &bull; One-Click Spoof
+      </p>
+
+      <a href="https://www.dropbox.com/scl/fi/p2z76gyaxzpxfbl5trw0t/Hyper-key-system.exe?rlkey=5556bibt5ly62yktovvz5z7aj&dl=1"
+         class="download-button">
+        Download Now
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".nav-tab");
+      tabs.forEach(tab => {
+        if (window.location.pathname.includes(tab.getAttribute("href"))) {
+          tab.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
