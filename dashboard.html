@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - FiveM Spoofer</title>
+  <link rel="stylesheet" href="index.css"/> 
+  <link rel="stylesheet" href="dashboard.css"/> 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar">
+    <div class="logo">FiveM Spoofer</div>
+    <div class="hamburger" onclick="toggleMenu()"></div>
+    <ul class="nav-tabs" id="navTabs">
+      <li><a href="index.html" class="nav-tab">Home</a></li>
+      <li><a href="dashboard.html" class="nav-tab active">Dashboard</a></li>
+      <li><a href="hwidreset.html" class="nav-tab">HWID Reset</a></li> 
+    </ul>
+  </nav>
+
+  <div class="dashboard">
+    <h1 class="glow-title">Control Panel</h1>
+    <div class="stats">
+      <div class="stat-card">
+        <h2>Downloads</h2>
+        <p class="stat-number">12,842</p>
+      </div>
+      <div class="stat-card">
+        <h2>Active Users</h2>
+        <p class="stat-number">347</p>
+      </div>
+      <div class="stat-card">
+        <h2>Latest Version</h2>
+        <p class="stat-number">v1.6.2</p>
+      </div>
+      <div class="stat-card">
+        <h2>Status</h2>
+        <p class="stat-number green">Undetected</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
