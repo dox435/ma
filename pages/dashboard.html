@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - FiveM Spoofer</title>
+  <link rel="stylesheet" href="../assets/css/index.css"/>
+  <link rel="stylesheet" href="../assets/css/dashboard.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar">
+    <div class="logo">FiveM Spoofer</div>
+    <div class="hamburger" onclick="toggleMenu()"></div>
+    <ul class="nav-tabs" id="navTabs">
+      <li><a href="../pages/index.html" class="nav-tab" id="homeTab">Home</a></li>
+      <li><a href="../pages/download.html" class="nav-tab" id="downloadTab">Download</a></li>
+      <li><a href="../pages/dashboard.html" class="nav-tab active" id="dashboardTab">Dashboard</a></li>
+      <li><a href="../pages/hwidreset.html" class="nav-tab" id="hwidResetTab">HWID Reset</a></li>
+    </ul>
+  </nav>
+
+  <div class="dashboard">
+    <h1 class="glow-title">Control Panel</h1>
+    <div class="stats">
+      <div class="stat-card">
+        <h2>Downloads</h2>
+        <p class="stat-number" id="downloadsCount">2000</p>
+      </div>
+      <div class="stat-card">
+        <h2>Active Users</h2>
+        <p class="stat-number" id="activeUsersCount">324</p>
+      </div>
+      <div class="stat-card">
+        <h2>Latest Version</h2>
+        <p class="stat-number">v1.6.2</p>
+      </div>
+      <div class="stat-card">
+        <h2>Status</h2>
+        <p class="stat-number green">Undetected</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load values from localStorage, or set initial values if none are found
+      let downloads = localStorage.getItem('downloadsCount') ? parseInt(localStorage.getItem('downloadsCount')) : 2000;
+      let activeUsers = localStorage.getItem('activeUsersCount') ? parseInt(localStorage.getItem('activeUsersCount')) : 324;
+
+      // Update the display with the loaded values
+      document.getElementById('downloadsCount').textContent = downloads;
+      document.getElementById('activeUsersCount').textContent = activeUsers;
+
+      // Function to update active users count
+      setInterval(function() {
+        let change = Math.floor(Math.random() * 7) - 3; // Random change between -3 and +3
+        activeUsers += change;
+        // Ensure the value doesn't go below 0
+        if (activeUsers < 0) activeUsers = 0;
+        // Save the updated value to localStorage
+        localStorage.setItem('activeUsersCount', activeUsers);
+        // Update the display
+        document.getElementById('activeUsersCount').textContent = activeUsers;
+      }, 3000);  // Every 3 seconds
+
+      // Function to update downloads count
+      setInterval(function() {
+        let change = Math.floor(Math.random() * 7) - 3; // Random change between -3 and +3
+        downloads += change;
+        // Ensure the value doesn't go below 0
+        if (downloads < 0) downloads = 0;
+        // Save the updated value to localStorage
+        localStorage.setItem('downloadsCount', downloads);
+        // Update the display
+        document.getElementById('downloadsCount').textContent = downloads;
+      }, 3000);  // Every 3 seconds
+
+      // Remove "active" class from all tabs and set the active tab
+      document.querySelectorAll('.nav-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+      if (window.location.href.includes("dashboard")) {
+        document.getElementById('dashboardTab').classList.add('active');
+      } else if (window.location.href.includes("index")) {
+        document.getElementById('homeTab').classList.add('active');
+      } else if (window.location.href.includes("download")) {
+        document.getElementById('downloadTab').classList.add('active');
+      } else if (window.location.href.includes("hwidreset")) {
+        document.getElementById('hwidResetTab').classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
