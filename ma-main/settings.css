@@ -1,0 +1,183 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    background: #000d1a;
+    color: #fff;
+}
+
+canvas#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, #001b33, #000d1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    z-index: 10;
+    border-bottom: 1px solid #00aaff44;
+    box-shadow: 0 2px 10px #00aaff22;
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+    color: #00aaff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00aaff;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-tab {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(0, 170, 255, 0.1);
+    border: 1px solid transparent;
+}
+
+.nav-tab:hover {
+    color: #fff;
+    border-color: #00aaff88;
+    background: rgba(0, 170, 255, 0.2);
+    box-shadow: 0 0 10px #00aaff33;
+}
+
+.nav-tab.active {
+    color: #00aaff;
+    font-weight: bold;
+    background: rgba(0, 170, 255, 0.3);
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 15px #00aaff66;
+}
+
+/* Settings Container */
+.settings-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+    background: transparent;
+}
+
+.settings-content {
+    text-align: center;
+    background: rgba(0, 0, 30, 0.5);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00aaff22;
+    border: 1px solid #00aaff22;
+    width: 100%;
+    max-width: 600px;
+}
+
+.glow-title {
+    font-size: 3rem;
+    color: #00aaff;
+    text-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff;
+    margin-bottom: 20px;
+    animation: glow-pulse 2.5s infinite ease-in-out;
+}
+
+.glow-subtext {
+    font-size: 1.4rem;
+    color: #ffffffcc;
+    text-shadow: 0 0 10px #00aaff88;
+    margin-bottom: 15px;
+}
+
+/* Mouse Sparks Disable Toggle */
+.mouse-sparks-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.mouse-sparks-switch input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #00aaff;
+}
+
+.mouse-sparks-switch .slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mouse-sparks-switch .slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.mouse-sparks-switch input:checked + .slider {
+    background-color: #00aaff;
+}
+
+.mouse-sparks-switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+.mouse-sparks-switch .label-text {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Glow Animation */
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff;
+    }
+    50% {
+        text-shadow: 0 0 10px #0077ff, 0 0 20px #0077ff;
+    }
+}

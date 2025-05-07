@@ -1,0 +1,77 @@
+.dashboard {
+    padding-top: 120px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.stats {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px; 
+}
+
+.stat-card {
+    background: rgba(0, 12, 30, 0.95);
+    border: 1px solid #00aaff33;
+    border-radius: 18px;
+    padding: 30px;
+    width: 240px;
+    box-shadow: 0 0 30px #00aaff33;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    max-height: 350px;
+}
+
+.stat-card:hover {
+    box-shadow: 0 0 45px #00aaffaa;
+    transform: scale(1.05);
+}
+
+.stat-card h2 {
+    font-size: 1.2rem;
+    color: #00aaff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px #00aaff66;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px #00aaff;
+}
+
+.stat-number.green {
+    color: #00ff88;
+    text-shadow: 0 0 15px #00ff88;
+}
+
+@media (max-width: 768px) {
+    .stats {
+        gap: 20px; 
+        padding: 0 10px; 
+    }
+
+    .stat-card {
+        width: 100%; 
+        padding: 20px; 
+        max-width: 100%; 
+    }
+
+    .stat-card h2 {
+        font-size: 1rem; 
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .dashboard {
+        padding-top: 100px; 
+    }
+}

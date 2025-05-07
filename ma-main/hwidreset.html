@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset Your Key - FiveM Spoofer</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="stylesheet" href="hwidreset.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Canvas for Starfield -->
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar">
+    <div class="logo">FiveM Spoofer</div>
+    <ul class="nav-tabs" id="navTabs">
+      <li><a href="index.html" class="nav-tab">Home</a></li>
+      <li><a href="download.html" class="nav-tab">Download</a></li>
+      <li><a href="dashboard.html" class="nav-tab">Dashboard</a></li>
+      <li><a href="hwidreset.html" class="nav-tab active">HWID Reset</a></li>
+      <li><a href="settings.html" class="nav-tab">Settings</a></li> 
+    </ul>
+  </nav>
+
+  <div class="hwid-reset-container">
+    <div class="hwid-reset-content">
+      <h1 class="glow-title">Reset Your Key</h1>
+      <p class="glow-subtext">
+        If you're having trouble with the spoofer, you can reset your key here to restore functionality.
+      </p>
+
+      <div class="key-instructions">
+        <h2>How to Reset Your Key:</h2>
+        <ul>
+          <li>Click the button below to reset your key.</li>
+          <li>This process will ensure your spoofer is properly reset and functional.</li>
+          <li>The reset takes just a few seconds and does not affect your system settings.</li>
+        </ul>
+      </div>
+
+      <div class="reset-buttons">
+        <div class="stat-card">
+          <div class="reset-btn-container">
+            <button class="reset-btn" id="resetBtn">Reset Key</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div class="hwid-reset-overlay" id="loadingOverlay">
+    <div class="overlay-content">
+      <p class="loading-message">Resetting your key...</p>
+      <div class="loading-container">
+        <div class="loading-bar" id="loadingBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Overlay -->
+  <div class="hwid-reset-overlay" id="successOverlay">
+    <div class="overlay-content">
+      <p class="loading-message success">Key Reset Successfully!</p>
+      <button class="close-btn" id="closeBtn">Close</button>
+    </div>
+  </div>
+
+  
+  <!-- Load External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
