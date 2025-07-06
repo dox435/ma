@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyper Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">Hyper Bot</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="commands.html">Commands</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="card fade-in" style="text-align: center;">
+        <h2>Welcome to Hyper Bot</h2>
+        <p>Your all-in-one Discord moderation, utility, and fun bot. Easy to use and packed with features.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot%20applications.commands" class="btn primary large">Invite the Bot</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">What Hyper Bot Can Do</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🛡️ Moderation</h3>
+          <p>Kick, ban, timeout, and protect your server with smart automod tools.</p>
+        </div>
+        <div class="card">
+          <h3>🎮 Fun & Games</h3>
+          <p>Play games, tell jokes, and entertain your members with interactive features.</p>
+        </div>
+        <div class="card">
+          <h3>⚙️ Utilities</h3>
+          <p>Track uptime, set reminders, get server info, and more with handy utilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="card fade-in" style="text-align: center; background: #121214;">
+        <p>© 2025 Hyper Bot. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Script -->
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+
+    // Cursor follow
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+
+    // Hover scaling for interactive elements
+    const interactiveEls = document.querySelectorAll('a, button, .clickable');
+
+    interactiveEls.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursor.style.background = '#7f5eff';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.background = 'rgba(127, 95, 255, 0.2)';
+      });
+    });
+
+    // Ripple effect on click
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'click-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  </script>
+</body>
+</html>

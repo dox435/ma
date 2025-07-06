@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyper Bot Commands</title>
+  <link rel="stylesheet" href="commands.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">Hyper Bot</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="commands.html" class="active">Commands</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2>Available Commands</h2>
+      <p>Explore Hyper Bot's powerful commands for moderation, utility, and fun.</p>
+    </div>
+  </section>
+
+  <!-- Command Grid -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Command List</h2>
+
+      <!-- 🔍 Search Bar -->
+      <div class="search-container">
+        <input type="text" id="commandSearch" placeholder="Search commands..." onkeyup="filterCommands()" />
+      </div>
+
+      <!-- 💠 Command Cards -->
+      <div class="grid command-grid">
+        <div class="card" data-command="/ban">
+          <h3>/ban [user]</h3>
+          <p>Ban the specified user from the server.</p>
+        </div>
+        <div class="card" data-command="/kick">
+          <h3>/kick [user]</h3>
+          <p>Kick a user from your server.</p>
+        </div>
+        <div class="card" data-command="/mute">
+          <h3>/mute [user] [time]</h3>
+          <p>Temporarily mute a user for a given duration.</p>
+        </div>
+        <div class="card" data-command="/joke">
+          <h3>/joke</h3>
+          <p>Send a random joke to the chat.</p>
+        </div>
+        <div class="card" data-command="/ping">
+          <h3>/ping</h3>
+          <p>Check the bot's current response time.</p>
+        </div>
+        <div class="card" data-command="/userinfo">
+          <h3>/userinfo [user]</h3>
+          <p>View detailed info about a user.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Hyper Bot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+
+    const interactiveEls = document.querySelectorAll('a, button, .clickable');
+
+    interactiveEls.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursor.style.background = '#7f5eff';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.background = 'rgba(127, 95, 255, 0.2)';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'click-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+    // 🔍 Command Filter Logic
+    function filterCommands() {
+      const input = document.getElementById("commandSearch");
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll(".grid .card");
+
+      cards.forEach(card => {
+        const title = card.querySelector("h3")?.textContent.toLowerCase() || "";
+        const desc = card.querySelector("p")?.textContent.toLowerCase() || "";
+        if (title.includes(filter) || desc.includes(filter)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
